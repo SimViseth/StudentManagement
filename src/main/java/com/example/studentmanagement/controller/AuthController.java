@@ -1,0 +1,53 @@
+package com.example.studentmanagement.controller;
+
+import com.example.studentmanagement.model.dto.request.AuthRequest;
+import com.example.studentmanagement.model.dto.request.UserRequest;
+import com.example.studentmanagement.model.dto.response.AuthResponse;
+import com.example.studentmanagement.model.dto.response.UserResponse;
+import com.example.studentmanagement.service.AuthService;
+import com.example.studentmanagement.utils.ApiResponse;
+import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+
+@RestController
+@AllArgsConstructor
+@CrossOrigin
+@Slf4j
+@RequestMapping("api/v1/auths")
+public class AuthController {
+    private final AuthService authService;
+
+    @PostMapping("/register")
+    public ResponseEntity<ApiResponse<UserResponse>> createUser(@Valid @RequestBody UserRequest userRequest) {
+        UserResponse payloadResponse = authService.createUser(userRequest);
+        log.info("New user register: {}", payloadResponse);
+
+        ApiResponse<UserResponse> response = ApiResponse.<UserResponse>builder()
+                .message("A new user is created successfully")
+                .status(HttpStatus.CREATED)
+                .statusCode(HttpStatus.CREATED.value())
+                .payload(payloadResponse)
+                .time(LocalDateTime.now())
+                .build();
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<ApiResponse<AuthResponse>> login(@Valid @RequestBody AuthRequest authRequest) {
+        AuthResponse payloadResponse = authService.login(authRequest);
+        ApiResponse<AuthResponse> response = ApiResponse.<AuthResponse>builder()
+                .message("You are login successfully")
+                .status(HttpStatus.OK)
+                .statusCode(HttpStatus.OK.value())
+                .payload(payloadResponse)
+                .time(LocalDateTime.now())
+                .build();
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+}
