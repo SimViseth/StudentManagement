@@ -1,0 +1,439 @@
+[2025-06-17 08:30:24] - INFO - REQUEST_LOGGER - GET /api/v1/course from 0:0:0:0:0:0:0:1
+[2025-06-17 08:30:24] - INFO - RESPONSE_LOGGER - {"message":"Get all courses successfully","status":"OK","statusCode":200,"payload":[{"courseId":1,"courseName":"Java","description":"stringdv dfvg"},{"courseId":2,"courseName":"NextJS","description":"stringdvfgb cdsfvdg"},{"courseId":4,"courseName":"C#","description":"stringscdsdgf ddfgbfhg"},{"courseId":6,"courseName":"React","description":"stringgvbhnj dfv"}],"time":"2025-06-17T08:30:24.3578162"}
+[2025-06-17 08:31:46] - INFO - REQUEST_LOGGER - GET /api/v1/score from 0:0:0:0:0:0:0:1
+[2025-06-17 08:31:46] - INFO - REQUEST_LOGGER - Received request: GET /api/v1/score
+[2025-06-17 08:31:46] - INFO - RESPONSE_LOGGER - {
+  "message" : "Get all scores successfully",
+  "status" : "OK",
+  "statusCode" : 200,
+  "payload" : [ {
+    "scoreId" : 1,
+    "score" : "90",
+    "courseName" : "NextJS",
+    "userName" : "berry2@gmail.com"
+  } ],
+  "time" : "2025-06-17T08:31:46.2847362"
+}
+[2025-06-17 08:31:46] - INFO - RESPONSE_LOGGER - {"message":"Get all scores successfully","status":"OK","statusCode":200,"payload":[{"scoreId":1,"score":"90","courseName":"NextJS","userName":"berry2@gmail.com"}],"time":"2025-06-17T08:31:46.2847362"}
+[2025-06-17 08:37:24] - INFO - REQUEST_LOGGER - Received request: GET /api/v1/score
+[2025-06-17 08:37:24] - INFO - RESPONSE_LOGGER - {
+  "message" : "Get all scores successfully",
+  "status" : "OK",
+  "statusCode" : 200,
+  "payload" : [ {
+    "scoreId" : 1,
+    "score" : "90",
+    "courseName" : "NextJS",
+    "userName" : "berry2@gmail.com"
+  } ],
+  "time" : "2025-06-17T08:37:24.5529805"
+}
+[2025-06-17 08:47:21] - INFO - REQUEST_LOGGER - Received request: GET /api/v1/score
+[2025-06-17 08:47:21] - INFO - RESPONSE_LOGGER - {
+  "message" : "Get all scores successfully",
+  "status" : "OK",
+  "statusCode" : 200,
+  "payload" : [ {
+    "scoreId" : 1,
+    "score" : "90",
+    "courseName" : "NextJS",
+    "userName" : "berry2@gmail.com"
+  } ],
+  "time" : "2025-06-17T08:47:21.6369907"
+}
+[2025-06-17 08:52:36] - INFO - org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+[2025-06-17 08:52:37] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 7520 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 08:52:37] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 08:52:38] - INFO - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-06-17 08:52:38] - INFO - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 189 ms. Found 4 JPA repository interfaces.
+[2025-06-17 08:52:39] - INFO - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+[2025-06-17 08:52:39] - INFO - org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[2025-06-17 08:52:39] - INFO - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2025-06-17 08:52:39] - INFO - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+[2025-06-17 08:52:39] - INFO - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-06-17 08:52:39] - INFO - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2346 ms
+[2025-06-17 08:52:39] - INFO - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-06-17 08:52:39] - INFO - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+[2025-06-17 08:52:39] - INFO - org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-06-17 08:52:40] - INFO - org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-06-17 08:52:40] - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-06-17 08:52:40] - INFO - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69ed96e1
+[2025-06-17 08:52:40] - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-06-17 08:52:40] - WARN - org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-06-17 08:52:41] - INFO - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-06-17 08:52:41] - INFO - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-06-17 08:52:42] - INFO - org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userServiceImplement
+[2025-06-17 08:52:42] - WARN - org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-06-17 08:52:43] - INFO - org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+[2025-06-17 08:52:43] - INFO - org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[2025-06-17 08:52:43] - INFO - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+[2025-06-17 08:52:43] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 7.29 seconds (process running for 8.051)
+[2025-06-17 08:52:44] - INFO - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2025-06-17 08:52:44] - INFO - org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2025-06-17 08:52:44] - INFO - org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[2025-06-17 08:52:55] - INFO - com.example.studentmanagement.controller.CourseController - Request: GET /api/v1/course
+[2025-06-17 08:52:55] - INFO - com.example.studentmanagement.controller.CourseController - Response: [CourseResponse(courseId=1, courseName=Java, description=stringdv dfvg), CourseResponse(courseId=2, courseName=NextJS, description=stringdvfgb cdsfvdg), CourseResponse(courseId=4, courseName=C#, description=stringscdsdgf ddfgbfhg), CourseResponse(courseId=6, courseName=React, description=stringgvbhnj dfv)]
+[2025-06-17 08:55:09] - INFO - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-06-17 08:55:09] - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[2025-06-17 08:55:09] - INFO - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[2025-06-17 09:09:01] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 6188 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 09:09:01] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 09:09:09] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 8.383 seconds (process running for 9.282)
+[2025-06-17 09:09:19] - INFO - com.example.studentmanagement.controller.CourseController - Request: GET /api/v1/course
+[2025-06-17 09:09:19] - INFO - com.example.studentmanagement.controller.CourseController - Response: [CourseResponse(courseId=1, courseName=Java, description=stringdv dfvg), CourseResponse(courseId=2, courseName=NextJS, description=stringdvfgb cdsfvdg), CourseResponse(courseId=4, courseName=C#, description=stringscdsdgf ddfgbfhg), CourseResponse(courseId=6, courseName=React, description=stringgvbhnj dfv)]
+[2025-06-17 09:09:31] - INFO - com.example.studentmanagement.controller.CourseController - Request: GET /api/v1/course
+[2025-06-17 09:09:31] - INFO - com.example.studentmanagement.controller.CourseController - Response: [CourseResponse(courseId=1, courseName=Java, description=stringdv dfvg), CourseResponse(courseId=2, courseName=NextJS, description=stringdvfgb cdsfvdg), CourseResponse(courseId=4, courseName=C#, description=stringscdsdgf ddfgbfhg), CourseResponse(courseId=6, courseName=React, description=stringgvbhnj dfv)]
+[2025-06-17 09:11:31] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 10704 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 09:11:31] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 09:11:38] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 7.687 seconds (process running for 8.603)
+[2025-06-17 09:11:54] - INFO - com.example.studentmanagement.controller.CourseController - Request: POST /api/v1/course
+[2025-06-17 09:11:54] - INFO - com.example.studentmanagement.controller.CourseController - Response: CourseResponse(courseId=7, courseName=Laravel, description=dfbghsa)
+[2025-06-17 09:39:23] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 4244 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 09:39:23] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 09:39:51] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 29.368 seconds (process running for 30.458)
+[2025-06-17 09:40:08] - ERROR - com.example.studentmanagement.exception.GlobalException - VALIDATION FAILED at [POST /api/v1/course]: {courseName=must not be blank, description=must not be blank}
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.example.studentmanagement.utils.ApiResponse<com.example.studentmanagement.model.dto.response.CourseResponse>> com.example.studentmanagement.controller.CourseController.createCourse(com.example.studentmanagement.model.dto.request.CourseRequest,jakarta.servlet.http.HttpServletRequest) with 2 errors: [Field error in object 'courseRequest' on field 'description': rejected value []; codes [NotBlank.courseRequest.description,NotBlank.description,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseRequest.description,description]; arguments []; default message [description]]; default message [must not be blank]] [Field error in object 'courseRequest' on field 'courseName': rejected value []; codes [NotBlank.courseRequest.courseName,NotBlank.courseName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [courseRequest.courseName,courseName]; arguments []; default message [courseName]]; default message [must not be blank]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:144)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at com.example.studentmanagement.jwt.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-06-17 09:46:18] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 15900 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 09:46:18] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 09:49:35] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 10060 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 09:49:35] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 09:49:43] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 8.187 seconds (process running for 9.016)
+[2025-06-17 09:49:51] - ERROR - com.example.studentmanagement.exception.GlobalException - Validation Exception Response:
+{
+  "type" : "about:blank",
+  "title" : "Bad Request",
+  "status" : 400,
+  "detail" : "Validate Invalid",
+  "instance" : "/api/v1/course",
+  "errors" : {
+    "courseName" : "must not be blank",
+    "description" : "must not be blank"
+  }
+}
+[2025-06-17 09:51:36] - INFO - com.example.studentmanagement.controller.CourseController - Request: POST /api/v1/course
+[2025-06-17 09:51:37] - INFO - com.example.studentmanagement.controller.CourseController - Response: CourseResponse(courseId=8, courseName=C++, description=fvdgbfghfvf)
+[2025-06-17 09:51:49] - ERROR - com.example.studentmanagement.exception.GlobalException - Validation Exception Response:
+{
+  "type" : "about:blank",
+  "title" : "Bad Request",
+  "status" : 400,
+  "detail" : "Validate Invalid",
+  "instance" : "/api/v1/course",
+  "errors" : {
+    "courseName" : "must not be blank",
+    "description" : "must not be blank"
+  }
+}
+[2025-06-17 09:53:16] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 12680 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 09:53:16] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 09:53:24] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 7.985 seconds (process running for 8.771)
+[2025-06-17 09:53:37] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 10504 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 09:53:37] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 09:53:44] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 7.387 seconds (process running for 8.192)
+[2025-06-17 09:53:49] - ERROR - com.example.studentmanagement.exception.GlobalException - Validation Exception Response: ErrorResponse(type=about:blank, title=Bad Request, status=400, detail=Validate Invalid, instance=/api/v1/course, errors={courseName=must not be blank, description=must not be blank})
+[2025-06-17 10:06:22] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 7172 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 10:06:22] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 10:06:31] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 9.012 seconds (process running for 9.978)
+[2025-06-17 10:07:23] - INFO - com.example.studentmanagement.controller.AuthController - Request: POST /api/v1/auths/register
+[2025-06-17 10:07:24] - ERROR - com.example.studentmanagement.exception.GlobalException - NOT_FOUND at [POST /api/v1/auths/register]: Course not found
+com.example.studentmanagement.exception.NotFoundException: Course not found
+	at com.example.studentmanagement.service.serviceImpl.AuthServiceImplement.lambda$createUser$0(AuthServiceImplement.java:49)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.example.studentmanagement.service.serviceImpl.AuthServiceImplement.createUser(AuthServiceImplement.java:49)
+	at com.example.studentmanagement.controller.AuthController.createUser(AuthController.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at com.example.studentmanagement.jwt.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-06-17 10:10:57] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 16004 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 10:10:57] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 10:11:07] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 9.58 seconds (process running for 10.428)
+[2025-06-17 10:11:16] - INFO - com.example.studentmanagement.controller.AuthController - Request: POST /api/v1/auths/register
+[2025-06-17 10:11:16] - ERROR - com.example.studentmanagement.exception.GlobalException - Error Response:
+{
+  "type" : "about:blank",
+  "title" : "Conflict",
+  "status" : 409,
+  "detail" : "Email already registered",
+  "instance" : "/api/v1/auths/register",
+  "errors" : { }
+}
+[2025-06-17 10:12:17] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 15776 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 10:12:17] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 10:12:25] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 8.759 seconds (process running for 9.607)
+[2025-06-17 10:13:40] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 2632 (D:\HRD\Spring Boot\work\student-management-clone\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone\studentManagement)
+[2025-06-17 10:13:40] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-17 10:13:48] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 8.523 seconds (process running for 9.41)
+[2025-06-17 10:14:02] - INFO - com.example.studentmanagement.controller.AuthController - Request: POST /api/v1/auths/register
+[2025-06-17 10:14:02] - ERROR - com.example.studentmanagement.exception.GlobalException - Error Response: ErrorResponse(type=about:blank, title=Conflict, status=409, detail=Email already registered, instance=/api/v1/auths/register, errors={})
+[2025-06-17 10:14:42] - INFO - com.example.studentmanagement.controller.AuthController - Request: POST /api/v1/auths/login
+[2025-06-17 10:14:42] - ERROR - com.example.studentmanagement.exception.GlobalException - Error Response: ErrorResponse(type=about:blank, title=Not Found, status=404, detail=Invalid Email Address, instance=/api/v1/auths/login, errors={})
+[2025-06-17 10:15:56] - INFO - com.example.studentmanagement.controller.CourseController - Request: GET /api/v1/course
+[2025-06-17 10:15:56] - INFO - com.example.studentmanagement.controller.CourseController - Response: [CourseResponse(courseId=1, courseName=Java, description=stringdv dfvg), CourseResponse(courseId=2, courseName=NextJS, description=stringdvfgb cdsfvdg), CourseResponse(courseId=4, courseName=C#, description=stringscdsdgf ddfgbfhg), CourseResponse(courseId=6, courseName=React, description=stringgvbhnj dfv), CourseResponse(courseId=7, courseName=Laravel, description=dfbghsa), CourseResponse(courseId=8, courseName=C++, description=fvdgbfghfvf)]
+[2025-06-17 10:18:27] - ERROR - com.example.studentmanagement.exception.GlobalException - Error Response: ErrorResponse(type=about:blank, title=Bad Request, status=400, detail=Validate Invalid, instance=/api/v1/course, errors={courseName=must not be blank, description=must not be blank})

@@ -4,10 +4,15 @@ import com.example.studentmanagement.model.dto.request.PostRequest;
 import com.example.studentmanagement.model.dto.response.PostResponse;
 import com.example.studentmanagement.utils.ApiResponse;
 import com.example.studentmanagement.client.ApiService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +30,11 @@ public class PostController {
     private final ApiService apiService;
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<PostResponse>>> getAllPosts() {
+    public ResponseEntity<ApiResponse<List<PostResponse>>> getAllPosts(HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         List<PostResponse> payloadResponse = apiService.getPosts();
-        log.info("Get all posts: {}", payloadResponse);
 
         ApiResponse<List<PostResponse>> response = ApiResponse.<List<PostResponse>>builder()
                 .status(HttpStatus.OK)
@@ -36,13 +43,18 @@ public class PostController {
                 .message("Get all posts successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<PostResponse>> getPostById(@Valid @PathVariable Long id) {
+    public ResponseEntity<ApiResponse<PostResponse>> getPostById(@Valid @PathVariable Long id, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         PostResponse payloadResponse = apiService.getPostById(id);
-        log.info("Get post by id: {}", payloadResponse);
 
         ApiResponse<PostResponse> response = ApiResponse.<PostResponse>builder()
                 .status(HttpStatus.OK)
@@ -51,11 +63,17 @@ public class PostController {
                 .message("Get posts by id successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<PostResponse>> createPost(@RequestBody PostRequest postRequest) {
+    public ResponseEntity<ApiResponse<PostResponse>> createPost(@RequestBody PostRequest postRequest, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         PostResponse payloadResponse = apiService.createPost(postRequest);
 
         ApiResponse<PostResponse> response = ApiResponse.<PostResponse>builder()
@@ -65,11 +83,17 @@ public class PostController {
                 .message("Add post successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<PostResponse>> updatePost(@Valid @PathVariable Long id, @RequestBody PostRequest postRequest) {
+    public ResponseEntity<ApiResponse<PostResponse>> updatePost(@Valid @PathVariable Long id, @RequestBody PostRequest postRequest, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         PostResponse payloadResponse = apiService.updatePost(id, postRequest);
 
         ApiResponse<PostResponse> response = ApiResponse.<PostResponse>builder()
@@ -79,11 +103,17 @@ public class PostController {
                 .message("Post updated successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<String>> deletePost(@Valid @PathVariable Long id) {
+    public ResponseEntity<ApiResponse<String>> deletePost(@Valid @PathVariable Long id, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         apiService.deletePost(id);
         ApiResponse<String> response = ApiResponse.<String>builder()
                 .status(HttpStatus.OK)
@@ -91,6 +121,9 @@ public class PostController {
                 .message("Post updated successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", response);
+
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }

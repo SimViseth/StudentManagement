@@ -4,10 +4,15 @@ import com.example.studentmanagement.model.dto.request.ScoreRequest;
 import com.example.studentmanagement.model.dto.response.ScoreResponse;
 import com.example.studentmanagement.service.ScoreService;
 import com.example.studentmanagement.utils.ApiResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,16 +24,18 @@ import java.util.List;
 @AllArgsConstructor
 @CrossOrigin
 @SecurityRequirement(name = "bearerAuth")
-@RequestMapping("api/v1/score")
 @Slf4j
+@RequestMapping("api/v1/score")
 public class ScoreController {
 
     private final ScoreService scoreService;
 
     @PostMapping
-    public ResponseEntity<ApiResponse<ScoreResponse>> addScore(@Valid @RequestBody ScoreRequest scoreRequest) {
+    public ResponseEntity<ApiResponse<ScoreResponse>> addScore(@Valid @RequestBody ScoreRequest scoreRequest, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         ScoreResponse payloadResponse = scoreService.addScore(scoreRequest);
-        log.info("New score is created: {}", payloadResponse);
 
         ApiResponse<ScoreResponse> response = ApiResponse.<ScoreResponse>builder()
                 .status(HttpStatus.CREATED)
@@ -37,13 +44,18 @@ public class ScoreController {
                 .payload(payloadResponse)
                 .time(LocalDateTime.now())
                 .build();
+
+       log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping("/{scoreId}")
-    public ResponseEntity<ApiResponse<ScoreResponse>> updateScore(@Valid @PathVariable Integer scoreId, @RequestBody ScoreRequest scoreRequest) {
+    public ResponseEntity<ApiResponse<ScoreResponse>> updateScore(@Valid @PathVariable Integer scoreId, @RequestBody ScoreRequest scoreRequest, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         ScoreResponse payloadResponse = scoreService.updateScore(scoreId, scoreRequest);
-        log.info("Score is updated: {}", payloadResponse);
 
         ApiResponse<ScoreResponse> response = ApiResponse.<ScoreResponse>builder()
                 .status(HttpStatus.CREATED)
@@ -52,11 +64,17 @@ public class ScoreController {
                 .payload(payloadResponse)
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @DeleteMapping("/{scoreId}")
-    public ResponseEntity<ApiResponse<String>> deleteScore(@Valid @PathVariable Integer scoreId) {
+    public ResponseEntity<ApiResponse<String>> deleteScore(@Valid @PathVariable Integer scoreId, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         scoreService.deleteScore(scoreId);
         ApiResponse<String> response = ApiResponse.<String>builder()
                 .status(HttpStatus.OK)
@@ -64,13 +82,18 @@ public class ScoreController {
                 .message("Score is deleted successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", response);
+
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<ScoreResponse>>> getAllScores() {
+    public ResponseEntity<ApiResponse<List<ScoreResponse>>> getAllScores(HttpServletRequest request) {
+
+        log.info("Received request: {} {}", request.getMethod(), request.getRequestURI());
+
         List<ScoreResponse> payloadResponse = scoreService.getAllScores();
-        log.info("Get all scores: {}", payloadResponse);
 
         ApiResponse<List<ScoreResponse>> response = ApiResponse.<List<ScoreResponse>>builder()
                 .status(HttpStatus.OK)
@@ -79,14 +102,19 @@ public class ScoreController {
                 .message("Get all scores successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
 
     @GetMapping("/{scoreId}")
-    public ResponseEntity<ApiResponse<ScoreResponse>> getScoreById(@Valid @PathVariable Integer scoreId) {
+    public ResponseEntity<ApiResponse<ScoreResponse>> getScoreById(@Valid @PathVariable Integer scoreId, HttpServletRequest request) {
+
+        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
         ScoreResponse payloadResponse = scoreService.getScoreById(scoreId);
-        log.info("Get score by id: {}", payloadResponse);
 
         ApiResponse<ScoreResponse> response = ApiResponse.<ScoreResponse>builder()
                 .status(HttpStatus.OK)
@@ -95,6 +123,9 @@ public class ScoreController {
                 .message("Get score by id successfully")
                 .time(LocalDateTime.now())
                 .build();
+
+        log.info("Response: {}", payloadResponse);
+
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
