@@ -16,6 +16,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 @EnableTransactionManagement
@@ -41,9 +43,15 @@ public class MysqlConfig {
     @Bean
     LocalContainerEntityManagerFactoryBean mySqlEntityManagerFactoryBean(EntityManagerFactoryBuilder entityManagerFactoryBuilder,
                                                                          @Qualifier("mysqlDatasource") DataSource dataSource) {
+        // Generate table
+        Map<String, Object> jpaProperties = new HashMap<>();
+        jpaProperties.put("hibernate.hbm2ddl.auto", "update");
+        //jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
+
         return entityManagerFactoryBuilder
                 .dataSource(dataSource)
                 .packages("com.example.studentmanagement.model.entity.mysql")
+                .properties(jpaProperties)
                 .build();
     }
 

@@ -1,15 +1,15 @@
-package com.example.studentmanagement.service.serviceImpl.postgres;
+package com.example.studentmanagement.service.serviceImpl.oracle;
 
 import com.example.studentmanagement.exception.NotFoundException;
 import com.example.studentmanagement.model.dto.request.ScoreRequest;
 import com.example.studentmanagement.model.dto.response.ScoreResponse;
 import com.example.studentmanagement.model.entity.postgres.Course;
-import com.example.studentmanagement.model.entity.postgres.Score;
+import com.example.studentmanagement.model.entity.oracle.Score;
 import com.example.studentmanagement.model.entity.mysql.User;
 import com.example.studentmanagement.repository.postgres.CourseRepository;
-import com.example.studentmanagement.repository.postgres.ScoreRepository;
+import com.example.studentmanagement.repository.oracle.ScoreRepository;
 import com.example.studentmanagement.repository.mysql.UserRepository;
-import com.example.studentmanagement.service.postgres.ScoreService;
+import com.example.studentmanagement.service.oracle.ScoreService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -38,12 +38,12 @@ public class ScoreServiceImplement implements ScoreService {
         Score score = new Score();
         score.setScore(scoreRequest.getScore());
         score.setUserId(scoreRequest.getUserId());
-        score.setCourse(course);
+        score.setCourseId(scoreRequest.getCourseId());
 
         Score saveScore = scoreRepository.save(score);
 
         ScoreResponse response = modelMapper.map(saveScore, ScoreResponse.class);
-        response.setCourseName(course.getCourseName());
+        response.setCourseId(saveScore.getCourseId());
         response.setUserId(saveScore.getUserId());
 
         return response;
@@ -57,8 +57,8 @@ public class ScoreServiceImplement implements ScoreService {
 
         Score score = scoreRepository.findById(scoreId).orElseThrow(() -> new NotFoundException("Score not found"));
         score.setScore(scoreRequest.getScore());
-        score.setCourse(course);
-        score.setUserId(scoreRequest.getUserId());
+        score.setCourseId(scoreRequest.getCourseId());
+        score.setUserId(scoreRequest.getCourseId());
 
         Score updateScore = scoreRepository.save(score);
 

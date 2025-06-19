@@ -1,4 +1,4 @@
-package com.example.studentmanagement.service.postgres;
+package com.example.studentmanagement.service.oracle;
 
 import com.example.studentmanagement.model.dto.request.ScoreRequest;
 import com.example.studentmanagement.model.dto.response.ScoreResponse;

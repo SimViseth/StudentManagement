@@ -1,4 +1,4 @@
-package com.example.studentmanagement.model.entity.postgres;
+package com.example.studentmanagement.model.entity.oracle;
 
 import com.example.studentmanagement.model.entity.mysql.User;
 import com.example.studentmanagement.model.entity.postgres.Course;
@@ -21,7 +21,5 @@ public class Score {
 
     private Integer userId; // store only ID
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
+    private Integer courseId;
 }

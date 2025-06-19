@@ -10,6 +10,6 @@ import lombok.*;
 public class ScoreResponse {
     private Integer scoreId;
     private String score;
-    private String courseName;
+    private Integer courseId;
     private Integer userId;
 }

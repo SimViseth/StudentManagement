@@ -1,10 +1,9 @@
 package com.example.studentmanagement.configuration;
 
-import jakarta.persistence.EntityManagerFactory;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,41 +21,40 @@ import java.util.Map;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "com.example.studentmanagement.repository.postgres",
-        entityManagerFactoryRef = "postgresEntityManagerFactoryBean",
-        transactionManagerRef = "postgresTransactionManager"
+        basePackages = "com.example.studentmanagement.repository.oracle",
+        entityManagerFactoryRef = "oracleEntityManagerFactoryBean",
+        transactionManagerRef = "oracleTransactionManager"
 )
-public class PostgresConfig {
 
-    @ConfigurationProperties("spring.datasource.pg")
+public class OracleConfig {
     @Bean
-    public DataSourceProperties postgresDatasourceProperties() {
+    @ConfigurationProperties(prefix = "spring.datasource.oracle")
+    public DataSourceProperties oracleDatasourceProperties() {
         return new DataSourceProperties();
     }
 
     @Bean
-    public DataSource postgresDatasource() {
-        return postgresDatasourceProperties().initializeDataSourceBuilder().build();
+    public DataSource oracleDatasource() {
+        return oracleDatasourceProperties().initializeDataSourceBuilder().build();
     }
 
     @Bean
-    LocalContainerEntityManagerFactoryBean postgresEntityManagerFactoryBean(EntityManagerFactoryBuilder entityManagerFactoryBuilder,
-                                                                            @Qualifier("postgresDatasource") DataSource dataSource) {
+    LocalContainerEntityManagerFactoryBean oracleEntityManagerFactoryBean(EntityManagerFactoryBuilder entityManagerFactoryBuilder,
+                                                                         @Qualifier("oracleDatasource") DataSource dataSource) {
 
         Map<String, Object> jpaProperties = new HashMap<>();
         jpaProperties.put("hibernate.hbm2ddl.auto", "update");
-        //jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+        //jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
 
         return entityManagerFactoryBuilder
                 .dataSource(dataSource)
-                .packages("com.example.studentmanagement.model.entity.postgres")
+                .packages("com.example.studentmanagement.model.entity.oracle")
                 .properties(jpaProperties)
                 .build();
     }
 
     @Bean
-    PlatformTransactionManager postgresTransactionManager(@Qualifier("postgresEntityManagerFactoryBean") LocalContainerEntityManagerFactoryBean emfb) {
+    PlatformTransactionManager oracleTransactionManager(@Qualifier("oracleEntityManagerFactoryBean") LocalContainerEntityManagerFactoryBean emfb) {
         return new JpaTransactionManager(emfb.getObject());
     }
 }
-

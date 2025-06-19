@@ -1,7 +1,5 @@
 package com.example.studentmanagement.model.entity.mysql;
 
-import com.example.studentmanagement.model.entity.postgres.Score;
-import com.example.studentmanagement.model.entity.postgres.UserCourse;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

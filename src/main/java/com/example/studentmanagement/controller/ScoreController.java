@@ -2,7 +2,7 @@ package com.example.studentmanagement.controller;
 
 import com.example.studentmanagement.model.dto.request.ScoreRequest;
 import com.example.studentmanagement.model.dto.response.ScoreResponse;
-import com.example.studentmanagement.service.postgres.ScoreService;
+import com.example.studentmanagement.service.oracle.ScoreService;
 import com.example.studentmanagement.utils.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.servlet.http.HttpServletRequest;

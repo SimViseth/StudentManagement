@@ -1,5 +1,6 @@
 package com.example.studentmanagement.model.entity.postgres;
 
+import com.example.studentmanagement.model.entity.oracle.Score;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,6 @@ public class Course {
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<UserCourse> userCourses;
 
-    @OneToMany(mappedBy = "course")
-    private List<Score> score;
+//    @OneToMany(mappedBy = "course")
+//    private List<Score> score;
 }
