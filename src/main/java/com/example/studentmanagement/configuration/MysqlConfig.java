@@ -46,7 +46,6 @@ public class MysqlConfig {
         // Generate table
         Map<String, Object> jpaProperties = new HashMap<>();
         jpaProperties.put("hibernate.hbm2ddl.auto", "update");
-        //jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 
         return entityManagerFactoryBuilder
                 .dataSource(dataSource)

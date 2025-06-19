@@ -44,7 +44,6 @@ public class OracleConfig {
 
         Map<String, Object> jpaProperties = new HashMap<>();
         jpaProperties.put("hibernate.hbm2ddl.auto", "update");
-        //jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.Oracle12cDialect");
 
         return entityManagerFactoryBuilder
                 .dataSource(dataSource)

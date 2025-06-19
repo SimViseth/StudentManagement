@@ -45,7 +45,6 @@ public class PostgresConfig {
 
         Map<String, Object> jpaProperties = new HashMap<>();
         jpaProperties.put("hibernate.hbm2ddl.auto", "update");
-        //jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 
         return entityManagerFactoryBuilder
                 .dataSource(dataSource)

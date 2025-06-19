@@ -19,7 +19,7 @@ public class Score {
     private Integer scoreId;
     private String score;
 
-    private Integer userId; // store only ID
+    private Integer userId;
 
     private Integer courseId;
 }

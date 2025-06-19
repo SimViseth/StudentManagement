@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
 
-    <!-- Unified app log for your controllers, services, etc. -->
+    <!-- Unified app log for controllers, services -->
     <appender name="APP_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/app.log</file>
         <append>true</append>
@@ -17,7 +17,7 @@
         </encoder>
     </appender>
 
-    <!-- Log only your application package (adjust the package name below) -->
+    <!-- Log only application package -->
     <logger name="com.example.studentmanagement" level="INFO" additivity="false">
         <appender-ref ref="APP_FILE"/>
     </logger>

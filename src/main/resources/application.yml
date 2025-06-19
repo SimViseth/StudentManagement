@@ -21,5 +21,3 @@ spring:
 #      ddl-auto: update
 #    generate-ddl: true
     open-in-view: false
-
-#url: jdbc:oracle:thin:@localhost:1521/XEPDB1
