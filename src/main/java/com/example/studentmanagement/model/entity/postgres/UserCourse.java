@@ -1,4 +1,4 @@
-package com.example.studentmanagement.model.entity;
+package com.example.studentmanagement.model.entity.postgres;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,18 +10,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "score")
-public class Score {
+@Entity(name = "userCourse")
+public class UserCourse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer scoreId;
-    private String score;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_id")
-    private Course course;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
 }

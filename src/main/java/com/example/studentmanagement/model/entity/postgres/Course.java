@@ -1,4 +1,4 @@
-package com.example.studentmanagement.model.entity;
+package com.example.studentmanagement.model.entity.postgres;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

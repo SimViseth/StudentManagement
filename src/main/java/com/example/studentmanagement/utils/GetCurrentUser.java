@@ -1,6 +1,6 @@
 package com.example.studentmanagement.utils;
 
-import com.example.studentmanagement.model.entity.User;
+import com.example.studentmanagement.model.entity.postgres.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 public class GetCurrentUser {

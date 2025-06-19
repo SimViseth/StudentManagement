@@ -8,19 +8,18 @@ import com.example.studentmanagement.model.dto.request.AuthRequest;
 import com.example.studentmanagement.model.dto.request.UserRequest;
 import com.example.studentmanagement.model.dto.response.AuthResponse;
 import com.example.studentmanagement.model.dto.response.UserResponse;
-import com.example.studentmanagement.model.entity.Course;
-import com.example.studentmanagement.model.entity.User;
-import com.example.studentmanagement.model.entity.UserCourse;
-import com.example.studentmanagement.repository.CourseRepository;
-import com.example.studentmanagement.repository.UserCourseRepository;
-import com.example.studentmanagement.repository.UserRepository;
+import com.example.studentmanagement.model.entity.postgres.Course;
+import com.example.studentmanagement.model.entity.postgres.User;
+import com.example.studentmanagement.model.entity.postgres.UserCourse;
+import com.example.studentmanagement.repository.postgres.CourseRepository;
+import com.example.studentmanagement.repository.postgres.UserCourseRepository;
+import com.example.studentmanagement.repository.postgres.UserRepository;
 import com.example.studentmanagement.service.AuthService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Service;
 
 @Service

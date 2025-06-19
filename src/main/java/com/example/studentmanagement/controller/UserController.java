@@ -59,7 +59,7 @@ public class UserController {
         log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
 
         UserResponse payloadResponse = authService.updateUser(userId, userRequest);
-        
+
         ApiResponse<UserResponse> response = ApiResponse.<UserResponse>builder()
                 .status(HttpStatus.OK)
                 .statusCode(HttpStatus.OK.value())

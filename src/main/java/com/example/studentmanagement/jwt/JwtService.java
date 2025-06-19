@@ -1,6 +1,6 @@
 package com.example.studentmanagement.jwt;
 
-import com.example.studentmanagement.model.entity.User;
+import com.example.studentmanagement.model.entity.postgres.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

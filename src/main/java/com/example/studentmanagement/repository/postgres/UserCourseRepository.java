@@ -1,7 +1,7 @@
-package com.example.studentmanagement.repository;
+package com.example.studentmanagement.repository.postgres;
 
-import com.example.studentmanagement.model.entity.User;
-import com.example.studentmanagement.model.entity.UserCourse;
+import com.example.studentmanagement.model.entity.postgres.User;
+import com.example.studentmanagement.model.entity.postgres.UserCourse;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,10 +1,9 @@
 package com.example.studentmanagement.service.serviceImpl;
 
 import com.example.studentmanagement.exception.NotFoundException;
-import com.example.studentmanagement.model.dto.request.UserRequest;
 import com.example.studentmanagement.model.dto.response.UserResponse;
-import com.example.studentmanagement.model.entity.User;
-import com.example.studentmanagement.repository.UserRepository;
+import com.example.studentmanagement.model.entity.postgres.User;
+import com.example.studentmanagement.repository.postgres.UserRepository;
 import com.example.studentmanagement.service.UserService;
 import com.example.studentmanagement.utils.GetCurrentUser;
 import lombok.AllArgsConstructor;

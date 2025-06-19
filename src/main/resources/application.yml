@@ -3,6 +3,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/student_management
     username: postgres
     password: 123
+    driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -10,7 +12,16 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
-springdoc:
-  swagger-ui:
-    tags-sorter: alpha
-    doc-expansion: false
+
+#  datasource-mysql:
+#    url: jdbc:mysql://localhost:3306/student_management
+#    username: root
+#    password: Vi-222777
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#  jpa-mysql:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL8Dialect

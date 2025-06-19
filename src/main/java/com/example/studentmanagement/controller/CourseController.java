@@ -60,7 +60,7 @@ public class CourseController {
         log.info("Request: {} {}" , request.getMethod(), request.getRequestURI());
 
         CourseResponse payloadResponse = courseService.updateCourse(courseId, courseRequest);
-        
+
         ApiResponse<CourseResponse> response = ApiResponse.<CourseResponse>builder()
                 .status(HttpStatus.OK)
                 .statusCode(HttpStatus.OK.value())

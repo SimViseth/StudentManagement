@@ -3,16 +3,14 @@ package com.example.studentmanagement.service.serviceImpl;
 import com.example.studentmanagement.exception.NotFoundException;
 import com.example.studentmanagement.model.dto.request.CourseRequest;
 import com.example.studentmanagement.model.dto.response.CourseResponse;
-import com.example.studentmanagement.model.entity.Course;
-import com.example.studentmanagement.repository.CourseRepository;
+import com.example.studentmanagement.model.entity.postgres.Course;
+import com.example.studentmanagement.repository.postgres.CourseRepository;
 import com.example.studentmanagement.service.CourseService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Service
