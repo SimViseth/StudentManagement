@@ -1,4 +1,4 @@
-package com.example.studentmanagement.service;
+package com.example.studentmanagement.service.postgres;
 
 import com.example.studentmanagement.model.dto.request.CourseRequest;
 import com.example.studentmanagement.model.dto.response.CourseResponse;

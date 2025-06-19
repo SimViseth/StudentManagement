@@ -1,6 +1,6 @@
 package com.example.studentmanagement.jwt;
 
-import com.example.studentmanagement.service.UserService;
+import com.example.studentmanagement.service.mysql.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

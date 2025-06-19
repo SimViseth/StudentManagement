@@ -1,9 +1,9 @@
 //package com.example.studentmanagement.controller;
 //
 //import com.example.studentmanagement.model.entity.mysql.Log;
-//import com.example.studentmanagement.model.entity.postgres.User;
+//import com.example.studentmanagement.model.entity.mysql.User;
 //import com.example.studentmanagement.repository.mysql.LogRepository;
-//import com.example.studentmanagement.repository.postgres.UserRepository;
+//import com.example.studentmanagement.repository.mysql.UserRepository;
 //import org.springframework.http.ResponseEntity;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestBody;

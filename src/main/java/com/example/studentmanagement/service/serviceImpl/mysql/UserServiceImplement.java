@@ -1,11 +1,12 @@
-package com.example.studentmanagement.service.serviceImpl;
+package com.example.studentmanagement.service.serviceImpl.mysql;
 
 import com.example.studentmanagement.exception.NotFoundException;
 import com.example.studentmanagement.model.dto.response.UserResponse;
-import com.example.studentmanagement.model.entity.postgres.User;
-import com.example.studentmanagement.repository.postgres.UserRepository;
-import com.example.studentmanagement.service.UserService;
+import com.example.studentmanagement.model.entity.mysql.User;
+import com.example.studentmanagement.repository.mysql.UserRepository;
+import com.example.studentmanagement.service.mysql.UserService;
 import com.example.studentmanagement.utils.GetCurrentUser;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
+@Transactional("mySqlTransactionManager")
 public class UserServiceImplement implements UserService {
 
     private final UserRepository userRepository;

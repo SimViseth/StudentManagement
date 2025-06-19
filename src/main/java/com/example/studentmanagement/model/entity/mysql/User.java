@@ -1,5 +1,7 @@
-package com.example.studentmanagement.model.entity.postgres;
+package com.example.studentmanagement.model.entity.mysql;
 
+import com.example.studentmanagement.model.entity.postgres.Score;
+import com.example.studentmanagement.model.entity.postgres.UserCourse;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,11 +30,11 @@ public class User implements UserDetails {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Score> scoreList;
+    @Transient // optional
+    private List<Integer> scoreIds;
 
-    @OneToMany(mappedBy = "user")
-    private List<UserCourse> userCourses;
+    @Transient
+    private List<Integer> userCourses;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

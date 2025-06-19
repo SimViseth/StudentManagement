@@ -1,5 +1,7 @@
 package com.example.studentmanagement.model.entity.postgres;
 
+import com.example.studentmanagement.model.entity.mysql.User;
+import com.example.studentmanagement.model.entity.postgres.Course;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,11 +19,9 @@ public class Score {
     private Integer scoreId;
     private String score;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_id")
-    private Course course;
+    private Integer userId; // store only ID
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "course_id")
+    private Course course;
 }

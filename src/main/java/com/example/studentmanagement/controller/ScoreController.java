@@ -2,17 +2,13 @@ package com.example.studentmanagement.controller;
 
 import com.example.studentmanagement.model.dto.request.ScoreRequest;
 import com.example.studentmanagement.model.dto.response.ScoreResponse;
-import com.example.studentmanagement.service.ScoreService;
+import com.example.studentmanagement.service.postgres.ScoreService;
 import com.example.studentmanagement.utils.ApiResponse;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

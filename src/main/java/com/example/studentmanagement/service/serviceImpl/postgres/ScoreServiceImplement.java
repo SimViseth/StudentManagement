@@ -1,15 +1,15 @@
-package com.example.studentmanagement.service.serviceImpl;
+package com.example.studentmanagement.service.serviceImpl.postgres;
 
 import com.example.studentmanagement.exception.NotFoundException;
 import com.example.studentmanagement.model.dto.request.ScoreRequest;
 import com.example.studentmanagement.model.dto.response.ScoreResponse;
 import com.example.studentmanagement.model.entity.postgres.Course;
 import com.example.studentmanagement.model.entity.postgres.Score;
-import com.example.studentmanagement.model.entity.postgres.User;
+import com.example.studentmanagement.model.entity.mysql.User;
 import com.example.studentmanagement.repository.postgres.CourseRepository;
 import com.example.studentmanagement.repository.postgres.ScoreRepository;
-import com.example.studentmanagement.repository.postgres.UserRepository;
-import com.example.studentmanagement.service.ScoreService;
+import com.example.studentmanagement.repository.mysql.UserRepository;
+import com.example.studentmanagement.service.postgres.ScoreService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -28,19 +28,23 @@ public class ScoreServiceImplement implements ScoreService {
     @Override
     public ScoreResponse addScore(ScoreRequest scoreRequest) {
 
-        User user = userRepository.findById(scoreRequest.getUserId()).orElseThrow(() -> new NotFoundException("User not found"));
-        Course course = courseRepository.findById(scoreRequest.getCourseId()).orElseThrow(() -> new NotFoundException("Course not found"));
+        Course course = courseRepository.findById(scoreRequest.getCourseId())
+                .orElseThrow(() -> new NotFoundException("Course not found"));
+
+        if (!userRepository.existsById(scoreRequest.getUserId())) {
+            throw new NotFoundException("User not found");
+        }
 
         Score score = new Score();
         score.setScore(scoreRequest.getScore());
-        score.setUser(user);
+        score.setUserId(scoreRequest.getUserId());
         score.setCourse(course);
 
         Score saveScore = scoreRepository.save(score);
 
         ScoreResponse response = modelMapper.map(saveScore, ScoreResponse.class);
-        response.setCourseName(saveScore.getCourse().getCourseName());
-        response.setUserName(saveScore.getUser().getUsername());
+        response.setCourseName(course.getCourseName());
+        response.setUserId(saveScore.getUserId());
 
         return response;
 
@@ -54,7 +58,7 @@ public class ScoreServiceImplement implements ScoreService {
         Score score = scoreRepository.findById(scoreId).orElseThrow(() -> new NotFoundException("Score not found"));
         score.setScore(scoreRequest.getScore());
         score.setCourse(course);
-        score.setUser(user);
+        score.setUserId(scoreRequest.getUserId());
 
         Score updateScore = scoreRepository.save(score);
 

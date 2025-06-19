@@ -1,5 +1,6 @@
 package com.example.studentmanagement.model.entity.postgres;
 
+import com.example.studentmanagement.model.entity.mysql.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,13 +13,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity(name = "userCourse")
 public class UserCourse {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private Integer userId; // from User in MySQL
 
     @ManyToOne
     @JoinColumn(name = "course_id")

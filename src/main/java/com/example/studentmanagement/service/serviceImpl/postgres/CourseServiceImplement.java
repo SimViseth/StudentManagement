@@ -1,11 +1,11 @@
-package com.example.studentmanagement.service.serviceImpl;
+package com.example.studentmanagement.service.serviceImpl.postgres;
 
 import com.example.studentmanagement.exception.NotFoundException;
 import com.example.studentmanagement.model.dto.request.CourseRequest;
 import com.example.studentmanagement.model.dto.response.CourseResponse;
 import com.example.studentmanagement.model.entity.postgres.Course;
 import com.example.studentmanagement.repository.postgres.CourseRepository;
-import com.example.studentmanagement.service.CourseService;
+import com.example.studentmanagement.service.postgres.CourseService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

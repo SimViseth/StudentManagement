@@ -1,4 +1,4 @@
-package com.example.studentmanagement.service.serviceImpl;
+package com.example.studentmanagement.service.serviceImpl.mysql;
 
 import com.example.studentmanagement.exception.BadRequestException;
 import com.example.studentmanagement.exception.ConflictException;
@@ -9,12 +9,12 @@ import com.example.studentmanagement.model.dto.request.UserRequest;
 import com.example.studentmanagement.model.dto.response.AuthResponse;
 import com.example.studentmanagement.model.dto.response.UserResponse;
 import com.example.studentmanagement.model.entity.postgres.Course;
-import com.example.studentmanagement.model.entity.postgres.User;
+import com.example.studentmanagement.model.entity.mysql.User;
 import com.example.studentmanagement.model.entity.postgres.UserCourse;
 import com.example.studentmanagement.repository.postgres.CourseRepository;
 import com.example.studentmanagement.repository.postgres.UserCourseRepository;
-import com.example.studentmanagement.repository.postgres.UserRepository;
-import com.example.studentmanagement.service.AuthService;
+import com.example.studentmanagement.repository.mysql.UserRepository;
+import com.example.studentmanagement.service.mysql.AuthService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -48,7 +48,7 @@ public class AuthServiceImplement implements AuthService {
                 Course course = courseRepository.findById(courseId).orElseThrow(() -> new NotFoundException("Course not found"));
 
                 UserCourse userCourse = new UserCourse();
-                userCourse.setUser(saveUser);
+                userCourse.setUserId(saveUser.getUserId());
                 userCourse.setCourse(course);
 
                 userCourseRepository.save(userCourse);
@@ -76,14 +76,14 @@ public class AuthServiceImplement implements AuthService {
         user.setAddress(userRequest.getAddress());
         user.setPhoneNumber(userRequest.getPhoneNumber());
 
-        userCourseRepository.deleteAllByUser(user);
+        userCourseRepository.deleteAllByUserId(user.getUserId());
 
         for (Integer courseId : userRequest.getCourseIds()) {
 
             Course course = courseRepository.findById(courseId).orElseThrow(() -> new NotFoundException("Course not found"));
 
             UserCourse userCourse = new UserCourse();
-            userCourse.setUser(user);
+            userCourse.setUserId(userId);
             userCourse.setCourse(course);
             userCourseRepository.save(userCourse);
         }

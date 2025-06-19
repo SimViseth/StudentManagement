@@ -11,5 +11,5 @@ public class ScoreResponse {
     private Integer scoreId;
     private String score;
     private String courseName;
-    private String userName;
+    private Integer userId;
 }

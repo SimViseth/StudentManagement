@@ -1,4 +1,4 @@
-package com.example.studentmanagement.service;
+package com.example.studentmanagement.service.mysql;
 
 import com.example.studentmanagement.model.dto.request.AuthRequest;
 import com.example.studentmanagement.model.dto.request.UserRequest;
