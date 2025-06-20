@@ -21,7 +21,7 @@ import java.util.Map;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "com.example.studentmanagement.repository.oracle",
+        basePackages = "com.example.studentmanagement.repository.oracle",  // Tells Spring where to scan for JPA repository
         entityManagerFactoryRef = "oracleEntityManagerFactoryBean",
         transactionManagerRef = "oracleTransactionManager"
 )
@@ -33,21 +33,27 @@ public class OracleConfig {
         return new DataSourceProperties();
     }
 
+
+    // Bind to our custom: url, username, password, driverClass
     @Bean
     public DataSource oracleDatasource() {
         return oracleDatasourceProperties().initializeDataSourceBuilder().build();
     }
 
+
+    // Manage entity
+    // @Qualifier: help spring to choose which one to inject when have multiple beans of the same type
     @Bean
     LocalContainerEntityManagerFactoryBean oracleEntityManagerFactoryBean(EntityManagerFactoryBuilder entityManagerFactoryBuilder,
                                                                          @Qualifier("oracleDatasource") DataSource dataSource) {
 
         Map<String, Object> jpaProperties = new HashMap<>();
+        // hibernate update the DB schema
         jpaProperties.put("hibernate.hbm2ddl.auto", "update");
 
         return entityManagerFactoryBuilder
                 .dataSource(dataSource)
-                .packages("com.example.studentmanagement.model.entity.oracle")
+                .packages("com.example.studentmanagement.model.entity.oracle")  // Scans package for JPA entity classes
                 .properties(jpaProperties)
                 .build();
     }

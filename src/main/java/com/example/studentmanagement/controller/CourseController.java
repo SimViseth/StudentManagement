@@ -30,9 +30,7 @@ public class CourseController {
 
     @PostMapping
     @Operation(summary = "Create courses")
-    public ResponseEntity<ApiResponse<CourseResponse>> createCourse(@Valid @RequestBody CourseRequest courseRequest, HttpServletRequest request) {
-
-            log.info("Request: {} {}" , request.getMethod(), request.getRequestURI());
+    public ResponseEntity<ApiResponse<CourseResponse>> createCourse(@Valid @RequestBody CourseRequest courseRequest) {
 
             CourseResponse payloadResponse = courseService.createCourse(courseRequest);
 
@@ -43,8 +41,6 @@ public class CourseController {
                     .payload(payloadResponse)
                     .time(LocalDateTime.now())
                     .build();
-
-            log.info("Response: {}", payloadResponse);
 
             return ResponseEntity.status(HttpStatus.OK).body(response);
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true">
 
-    <!-- Unified app log for controllers, services -->
+    <!-- Appender for general application logs -->
     <appender name="APP_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/app.log</file>
         <append>true</append>
@@ -10,21 +10,39 @@
         </encoder>
     </appender>
 
-    <!-- Console log for everything -->
+    <!-- Appender for exceptions -->
+    <appender name="EXCEPTION_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/exception.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss}] - %level - %logger - %msg%n%ex</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Console output -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>[%d{yyyy-MM-dd HH:mm:ss}] - %level - %logger - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Log only application package -->
-    <logger name="com.example.studentmanagement" level="INFO" additivity="false">
+    <!-- Request Logger -->
+    <logger name="REQUEST_LOGGER" level="INFO" additivity="false">
         <appender-ref ref="APP_FILE"/>
     </logger>
 
-    <!-- Root logger: only to console -->
+    <!-- Response Logger -->
+    <logger name="RESPONSE_LOGGER" level="INFO" additivity="false">
+        <appender-ref ref="APP_FILE"/>
+    </logger>
+
+    <!-- Exception Logger -->
+    <logger name="EXCEPTION_LOGGER" level="ERROR" additivity="false">
+        <appender-ref ref="EXCEPTION_FILE"/>
+    </logger>
+
+    <!-- Optional: only keep console logging for root level -->
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>
-
 </configuration>

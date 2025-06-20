@@ -72,7 +72,7 @@ public class AuthServiceImplement implements AuthService {
 
         user.setUsername(userRequest.getUserName());
         user.setEmail(userRequest.getEmail());
-        user.setPassword(userRequest.getPassword());
+        user.setPassword(passwordEncoder.encode(userRequest.getPassword()));
         user.setAddress(userRequest.getAddress());
         user.setPhoneNumber(userRequest.getPhoneNumber());
 

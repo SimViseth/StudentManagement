@@ -25,9 +25,9 @@ public class ApiService {
         return webClient.get()
                 .uri("https://jsonplaceholder.typicode.com/posts")
                 .retrieve()
-                .bodyToFlux(PostResponse.class)
-                .collectList()
-                .block();
+                .bodyToFlux(PostResponse.class) // stream of items
+                .collectList() // convert to Mono<List<PostResponse>> : gather them into a List
+                .block(); // get List<PostResponse>
     }
 
     public PostResponse getPostById(Long id) {
