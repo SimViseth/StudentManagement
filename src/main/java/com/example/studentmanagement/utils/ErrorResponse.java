@@ -12,14 +12,13 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ErrorResponse {
     private String type;
     private String title;
     private int status;
     private String detail;
     private String instance;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Map<String, String> errors;
 }
 

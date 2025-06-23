@@ -36,64 +36,69 @@ public class RequestResponseLoggingFilter extends OncePerRequestFilter {
         try {
             filterChain.doFilter(wrappedRequest, wrappedResponse);
         } catch (Exception ex) {
-            logRequestDetails(wrappedRequest);
-            requestLogger.info("Request Fail: EXCEPTION at {} {}", method, uri);
+            String requestBody = extractRequestBody(wrappedRequest);
+            logRequest(method, uri, requestBody, false);
             exceptionLogger.error("Exception occurred: {}", ex.getMessage());
             throw ex;
         }
 
-        logRequestDetails(wrappedRequest);
-
-        String responseBody = new String(wrappedResponse.getContentAsByteArray(), StandardCharsets.UTF_8);
         int status = wrappedResponse.getStatus();
+        String responseBody = new String(wrappedResponse.getContentAsByteArray(), StandardCharsets.UTF_8);
 
-        try {
-            Object json = objectMapper.readValue(responseBody, Object.class);
-            String prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+        String requestBody = extractRequestBody(wrappedRequest);
 
-            if (status >= 400) {
-                requestLogger.info("Request fail with status: {} {}", status, uri);
-                exceptionLogger.error("\n{}", prettyJson);
-            }
-            else {
-                responseLogger.info("\n{}", prettyJson);
-            }
-        } catch (Exception ex) {
-            if (status >= 400) {
-                requestLogger.info("Request Fail with status: {} {}", status, uri);
-                exceptionLogger.error("Non json error response: {}", responseBody);
-            }
-            else {
-                responseLogger.info(responseBody);
-            }
+        if (status < 400) {
+            logRequest(method, uri, requestBody, true);
+            logResponse(responseBody, false);
+        } else {
+            logRequest(method, uri, requestBody, false);
+            logResponse(responseBody, true);
         }
+
         wrappedResponse.copyBodyToResponse();
     }
 
-    private void logRequestDetails(ContentCachingRequestWrapper requestWrapper) {
+    private String extractRequestBody(ContentCachingRequestWrapper requestWrapper) {
         String method = requestWrapper.getMethod();
-        String uri = requestWrapper.getRequestURI();
-        String requestBody = "";
-
         if ("POST".equalsIgnoreCase(method) || "PUT".equalsIgnoreCase(method) || "PATCH".equalsIgnoreCase(method)) {
             byte[] buf = requestWrapper.getContentAsByteArray();
-
             if (buf.length > 0) {
-                requestBody = new String(buf, StandardCharsets.UTF_8);
+                try {
+                    Object object = objectMapper.readValue(buf, Object.class);
+                    return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
+                } catch (Exception e) {
+                    return new String(buf, StandardCharsets.UTF_8);
+                }
             }
         }
+        return "";
+    }
 
+    private void logRequest(String method, String uri, String requestBody, boolean isSuccess) {
         if (!requestBody.isEmpty()) {
-            try {
-                Object object = objectMapper.readValue(requestBody, Object.class);
-                String json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
-                requestLogger.info("{} {}\n{}", method, uri, json);
-            } catch (Exception ex) {
-                requestLogger.info("{} {}\n{}", method, uri, requestBody);
-            }
+            requestLogger.info("Request {} - {} {}\n{}",
+                    isSuccess ? "successfully" : "fail", method, uri, requestBody);
+        } else {
+            requestLogger.info("Request {} - {} {}",
+                    isSuccess ? "successfully" : "fail", method, uri);
         }
-        else {
-            requestLogger.info("{} {}", method, uri);
+    }
+
+    private void logResponse(String responseBody, boolean isError) {
+        try {
+            Object json = objectMapper.readValue(responseBody, Object.class);
+            String prettyJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+            if (isError) {
+                exceptionLogger.error("\n{}", prettyJson);
+            } else {
+                responseLogger.info("\n{}", prettyJson);
+            }
+        } catch (Exception ex) {
+            if (isError) {
+                exceptionLogger.error("Non JSON error response: {}", responseBody);
+            } else {
+                responseLogger.info(responseBody);
+            }
         }
     }
 }
