@@ -29,8 +29,6 @@ public class ScoreController {
     @PostMapping
     public ResponseEntity<ApiResponse<ScoreResponse>> addScore(@Valid @RequestBody ScoreRequest scoreRequest, HttpServletRequest request) {
 
-        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
-
         ScoreResponse payloadResponse = scoreService.addScore(scoreRequest);
 
         ApiResponse<ScoreResponse> response = ApiResponse.<ScoreResponse>builder()
@@ -41,15 +39,11 @@ public class ScoreController {
                 .time(LocalDateTime.now())
                 .build();
 
-       log.info("Response: {}", payloadResponse);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping("/{scoreId}")
     public ResponseEntity<ApiResponse<ScoreResponse>> updateScore(@Valid @PathVariable Integer scoreId, @RequestBody ScoreRequest scoreRequest, HttpServletRequest request) {
-
-        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
 
         ScoreResponse payloadResponse = scoreService.updateScore(scoreId, scoreRequest);
 
@@ -61,15 +55,11 @@ public class ScoreController {
                 .time(LocalDateTime.now())
                 .build();
 
-        log.info("Response: {}", payloadResponse);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @DeleteMapping("/{scoreId}")
     public ResponseEntity<ApiResponse<String>> deleteScore(@Valid @PathVariable Integer scoreId, HttpServletRequest request) {
-
-        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
 
         scoreService.deleteScore(scoreId);
         ApiResponse<String> response = ApiResponse.<String>builder()
@@ -79,15 +69,11 @@ public class ScoreController {
                 .time(LocalDateTime.now())
                 .build();
 
-        log.info("Response: {}", response);
-
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping
     public ResponseEntity<ApiResponse<List<ScoreResponse>>> getAllScores(HttpServletRequest request) {
-
-        log.info("Received request: {} {}", request.getMethod(), request.getRequestURI());
 
         List<ScoreResponse> payloadResponse = scoreService.getAllScores();
 
@@ -99,16 +85,12 @@ public class ScoreController {
                 .time(LocalDateTime.now())
                 .build();
 
-        log.info("Response: {}", payloadResponse);
-
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
 
     @GetMapping("/{scoreId}")
     public ResponseEntity<ApiResponse<ScoreResponse>> getScoreById(@Valid @PathVariable Integer scoreId, HttpServletRequest request) {
-
-        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
 
         ScoreResponse payloadResponse = scoreService.getScoreById(scoreId);
 
@@ -119,8 +101,6 @@ public class ScoreController {
                 .message("Get score by id successfully")
                 .time(LocalDateTime.now())
                 .build();
-
-        log.info("Response: {}", payloadResponse);
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }

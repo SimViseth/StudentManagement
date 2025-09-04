@@ -1,209 +1,138 @@
-[2025-06-23 08:02:32] - INFO - REQUEST_LOGGER - Request successfully - GET /api/v1/score
-[2025-06-23 08:02:32] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Get all scores successfully",
-  "status" : "OK",
-  "statusCode" : 200,
-  "payload" : [ {
-    "scoreId" : 1,
-    "score" : "94",
-    "courseId" : 1,
-    "userId" : 3
-  }, {
-    "scoreId" : 2,
-    "score" : "92",
-    "courseId" : 4,
-    "userId" : 4
-  }, {
-    "scoreId" : 25,
-    "score" : "100",
-    "courseId" : 3,
-    "userId" : 5
-  } ],
-  "time" : "2025-06-23T08:02:32.7734401"
+[2025-06-25 09:31:25] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request GET /api/v1/course 
+[2025-06-25 09:31:25] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response 200 OK {"message":"Get all courses successfully","status":"OK","statusCode":200,"payload":[{"courseId":1,"courseName":"Java","description":"stringdcsgfbg dcfgb"},{"courseId":2,"courseName":"C#","description":"stringdcsgfbg dcfgb"},{"courseId":3,"courseName":"NextJS","description":"stringdcsgfbg dcfgb"},{"courseId":18,"courseName":"android","description":"dfgf"}],"time":"2025-06-25T09:31:25.0490255"}
+[2025-06-25 09:32:50] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request POST /api/v1/course {
+  "courseName": "devOps",
+  "description": "dfgf"
 }
-[2025-06-23 08:03:02] - INFO - REQUEST_LOGGER - Request fail - POST /api/v1/course
-[2025-06-23 08:04:29] - INFO - REQUEST_LOGGER - Request successfully - POST /api/v1/course
-[2025-06-23 08:04:29] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is created successfully",
-  "status" : "CREATED",
-  "statusCode" : 201,
-  "payload" : {
-    "courseId" : 7,
-    "courseName" : ".net",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  },
-  "time" : "2025-06-23T08:04:29.0056778"
+[2025-06-25 09:32:50] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response 200 OK {"message":"Course is created successfully","status":"CREATED","statusCode":201,"payload":{"courseId":19,"courseName":"devOps","description":"dfgf"},"time":"2025-06-25T09:32:50.3463854"}
+[2025-06-25 09:37:27] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 9428 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 09:37:27] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 09:37:39] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 12.631 seconds (process running for 14.447)
+[2025-06-25 09:38:27] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/30
+[2025-06-25 09:39:13] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/course 
+[2025-06-25 09:39:13] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get all courses successfully","status":"OK","statusCode":200,"payload":[{"courseId":1,"courseName":"Java","description":"stringdcsgfbg dcfgb"},{"courseId":2,"courseName":"C#","description":"stringdcsgfbg dcfgb"},{"courseId":3,"courseName":"NextJS","description":"stringdcsgfbg dcfgb"},{"courseId":18,"courseName":"android","description":"dfgf"},{"courseId":19,"courseName":"devOps","description":"dfgf"}],"time":"2025-06-25T09:39:13.3330344"}
+[2025-06-25 09:42:10] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: POST /api/v1/course {
+  "courseName": "abc",
+  "description": "dfgd"
 }
-[2025-06-23 08:12:15] - INFO - REQUEST_LOGGER - Request successfully - POST /api/v1/course
-[2025-06-23 08:12:15] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is created successfully",
-  "status" : "CREATED",
-  "statusCode" : 201,
-  "payload" : {
-    "courseId" : 8,
-    "courseName" : "devOps",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  },
-  "time" : "2025-06-23T08:12:15.1465452"
+[2025-06-25 09:42:10] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is created successfully","status":"CREATED","statusCode":201,"payload":{"courseId":20,"courseName":"abc","description":"dfgd"},"time":"2025-06-25T09:42:10.0969108"}
+[2025-06-25 09:48:15] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 8248 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 09:48:15] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 09:48:27] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 12.387 seconds (process running for 13.531)
+[2025-06-25 09:50:20] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 14844 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 09:50:20] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 09:50:37] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 16.959 seconds (process running for 18.101)
+[2025-06-25 09:50:57] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/20
+[2025-06-25 09:50:58] - INFO - com.example.studentmanagement.controller.CourseController - Response: ApiResponse(message=Course is deleted successfully, status=200 OK, statusCode=200, payload=null, time=2025-06-25T09:50:58.242861100)
+[2025-06-25 09:50:58] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: DELETE /api/v1/course/20 - Body: 
+[2025-06-25 09:50:58] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is deleted successfully","status":"OK","statusCode":200,"time":"2025-06-25T09:50:58.2428611"}
+[2025-06-25 09:51:02] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/19
+[2025-06-25 09:51:02] - INFO - com.example.studentmanagement.controller.CourseController - Response: ApiResponse(message=Course is deleted successfully, status=200 OK, statusCode=200, payload=null, time=2025-06-25T09:51:02.202546200)
+[2025-06-25 09:51:02] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: DELETE /api/v1/course/19 - Body: 
+[2025-06-25 09:51:02] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is deleted successfully","status":"OK","statusCode":200,"time":"2025-06-25T09:51:02.2025462"}
+[2025-06-25 09:51:29] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: POST /api/v1/course - Body: {
+  "courseName": "abc",
+  "description": "dfgd"
 }
-[2025-06-23 08:13:21] - INFO - REQUEST_LOGGER - Request successfully - POST /api/v1/course
-[2025-06-23 08:13:21] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is created successfully",
-  "status" : "CREATED",
-  "statusCode" : 201,
-  "payload" : {
-    "courseId" : 9,
-    "courseName" : "Javascript",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  },
-  "time" : "2025-06-23T08:13:21.4491119"
+[2025-06-25 09:51:29] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is created successfully","status":"CREATED","statusCode":201,"payload":{"courseId":21,"courseName":"abc","description":"dfgd"},"time":"2025-06-25T09:51:29.0442829"}
+[2025-06-25 09:56:15] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 18672 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 09:56:15] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 09:56:28] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 13.025 seconds (process running for 14.323)
+[2025-06-25 10:07:58] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 14900 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:07:58] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:08:12] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 15.018 seconds (process running for 16.386)
+[2025-06-25 10:09:18] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: POST /api/v1/course {
+  "courseName": "cbbb",
+  "description": "bgvfcds"
 }
-[2025-06-23 08:15:50] - INFO - REQUEST_LOGGER - Request successfully - GET /api/v1/course
-[2025-06-23 08:15:50] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Get all courses successfully",
-  "status" : "OK",
-  "statusCode" : 200,
-  "payload" : [ {
-    "courseId" : 1,
-    "courseName" : "Java",
-    "description" : "stringdcsgfbg dcfgb"
-  }, {
-    "courseId" : 2,
-    "courseName" : "C#",
-    "description" : "stringdcsgfbg dcfgb"
-  }, {
-    "courseId" : 3,
-    "courseName" : "NextJS",
-    "description" : "stringdcsgfbg dcfgb"
-  }, {
-    "courseId" : 4,
-    "courseName" : "Vue",
-    "description" : "stringgfvhbjn"
-  }, {
-    "courseId" : 5,
-    "courseName" : "HTML",
-    "description" : "stringfcvgbhnjmk"
-  }, {
-    "courseId" : 6,
-    "courseName" : "Laravel",
-    "description" : "cdvfgbnnbv hgfdsa"
-  }, {
-    "courseId" : 7,
-    "courseName" : ".net",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  }, {
-    "courseId" : 8,
-    "courseName" : "devOps",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  }, {
-    "courseId" : 9,
-    "courseName" : "Javascript",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  } ],
-  "time" : "2025-06-23T08:15:50.3239336"
+[2025-06-25 10:09:18] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is created successfully","status":"CREATED","statusCode":201,"payload":{"courseId":22,"courseName":"cbbb","description":"bgvfcds"},"time":"2025-06-25T10:09:18.7783309"}
+[2025-06-25 10:11:38] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 7812 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:11:38] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:11:56] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 18.479 seconds (process running for 19.761)
+[2025-06-25 10:12:50] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 5456 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:12:50] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:13:28] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 39.19 seconds (process running for 58.494)
+[2025-06-25 10:15:10] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: POST /api/v1/course {"courseName":"sdfg","description":"sdvf"}
+[2025-06-25 10:15:10] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is created successfully","status":"CREATED","statusCode":201,"payload":{"courseId":23,"courseName":"sdfg","description":"sdvf"},"time":"2025-06-25T10:15:10.8024184"}
+[2025-06-25 10:17:32] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/20
+[2025-06-25 10:19:14] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 15816 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:19:14] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:19:36] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 22.538 seconds (process running for 23.861)
+[2025-06-25 10:19:44] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/20
+[2025-06-25 10:20:27] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/23
+[2025-06-25 10:20:27] - INFO - com.example.studentmanagement.controller.CourseController - Response: ApiResponse(message=Course is deleted successfully, status=200 OK, statusCode=200, payload=null, time=2025-06-25T10:20:27.826055500)
+[2025-06-25 10:20:39] - INFO - com.example.studentmanagement.controller.CourseController - Request: GET /api/v1/course/23
+[2025-06-25 10:21:12] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: POST /api/v1/course {"courseName":"eee","description":"sdvf"}
+[2025-06-25 10:21:12] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is created successfully","status":"CREATED","statusCode":201,"payload":{"courseId":24,"courseName":"eee","description":"sdvf"},"time":"2025-06-25T10:21:12.0400447"}
+[2025-06-25 10:32:25] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 2172 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:32:25] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:32:36] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 10.786 seconds (process running for 12.211)
+[2025-06-25 10:34:34] - INFO - com.example.studentmanagement.controller.CourseController - Request: PUT /api/v1/course/23
+[2025-06-25 10:34:52] - INFO - com.example.studentmanagement.controller.CourseController - Request: PUT /api/v1/course/3
+[2025-06-25 10:34:52] - INFO - com.example.studentmanagement.controller.CourseController - Response: CourseResponse(courseId=3, courseName=string, description=string)
+[2025-06-25 10:34:52] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: PUT /api/v1/course/3 {
+  "courseName": "string",
+  "description": "string"
 }
-[2025-06-23 08:16:32] - INFO - REQUEST_LOGGER - Request successfully - DELETE /api/v1/course/7
-[2025-06-23 08:16:32] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is deleted successfully",
-  "status" : "OK",
-  "statusCode" : 200,
-  "time" : "2025-06-23T08:16:32.8775663"
-}
-[2025-06-23 08:17:21] - INFO - REQUEST_LOGGER - Request successfully - DELETE /api/v1/course/8
-[2025-06-23 08:17:21] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is deleted successfully",
-  "status" : "OK",
-  "statusCode" : 200,
-  "time" : "2025-06-23T08:17:21.4035749"
-}
-[2025-06-23 08:17:34] - INFO - REQUEST_LOGGER - Request successfully - POST /api/v1/course
-[2025-06-23 08:17:34] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is created successfully",
-  "status" : "CREATED",
-  "statusCode" : 201,
-  "payload" : {
-    "courseId" : 10,
-    "courseName" : "DevOps",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  },
-  "time" : "2025-06-23T08:17:34.8579807"
-}
-[2025-06-23 08:19:30] - INFO - REQUEST_LOGGER - Request successfully - POST /api/v1/course
-{
-  "courseName" : "DevOps1",
-  "description" : "cfvgbhnjk fvgbhnjmk"
-}
-[2025-06-23 08:19:30] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is created successfully",
-  "status" : "CREATED",
-  "statusCode" : 201,
-  "payload" : {
-    "courseId" : 11,
-    "courseName" : "DevOps1",
-    "description" : "cfvgbhnjk fvgbhnjmk"
-  },
-  "time" : "2025-06-23T08:19:30.3718865"
-}
-[2025-06-23 08:20:08] - INFO - REQUEST_LOGGER - Request successfully - PUT /api/v1/course/11
-{
-  "courseName" : "",
-  "description" : ""
-}
-[2025-06-23 08:20:08] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is updated successfully",
-  "status" : "OK",
-  "statusCode" : 200,
-  "payload" : {
-    "courseId" : 11,
-    "courseName" : "",
-    "description" : ""
-  },
-  "time" : "2025-06-23T08:20:08.9250717"
-}
-[2025-06-23 08:20:49] - INFO - REQUEST_LOGGER - Request successfully - PUT /api/v1/course/11
-{
-  "courseName" : "HTML",
-  "description" : "vdnf gvbhndv"
-}
-[2025-06-23 08:20:49] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Course is updated successfully",
-  "status" : "OK",
-  "statusCode" : 200,
-  "payload" : {
-    "courseId" : 11,
-    "courseName" : "HTML",
-    "description" : "vdnf gvbhndv"
-  },
-  "time" : "2025-06-23T08:20:49.5029923"
-}
-[2025-06-23 08:21:46] - INFO - REQUEST_LOGGER - Request fail - POST /api/v1/course
-{
-  "courseName" : "",
-  "description" : ""
-}
-[2025-06-23 08:22:34] - INFO - REQUEST_LOGGER - Request fail - DELETE /api/v1/course/20
-[2025-06-23 08:23:08] - INFO - REQUEST_LOGGER - Request successfully - GET /api/v1/course/4
-[2025-06-23 08:23:08] - INFO - RESPONSE_LOGGER - 
-{
-  "message" : "Get course by id successfully",
-  "status" : "OK",
-  "statusCode" : 200,
-  "payload" : {
-    "courseId" : 4,
-    "courseName" : "Vue",
-    "description" : "stringgfvhbjn"
-  },
-  "time" : "2025-06-23T08:23:08.5914209"
-}
-[2025-06-23 08:23:24] - INFO - REQUEST_LOGGER - Request fail - GET /api/v1/course/30
+[2025-06-25 10:34:52] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is updated successfully","status":"OK","statusCode":200,"payload":{"courseId":3,"courseName":"string","description":"string"},"time":"2025-06-25T10:34:52.6768017"}
+[2025-06-25 10:38:31] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 12372 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:38:31] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:38:42] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 11.063 seconds (process running for 12.368)
+[2025-06-25 10:39:31] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 8792 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:39:31] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:39:44] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 12.813 seconds (process running for 13.785)
+[2025-06-25 10:40:01] - INFO - com.example.studentmanagement.controller.ScoreController - Received request: GET /api/v1/score
+[2025-06-25 10:40:01] - INFO - com.example.studentmanagement.controller.ScoreController - Response: [ScoreResponse(scoreId=1, score=94, courseId=1, userId=3), ScoreResponse(scoreId=2, score=92, courseId=4, userId=4)]
+[2025-06-25 10:40:01] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/score {}
+[2025-06-25 10:40:01] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get all scores successfully","status":"OK","statusCode":200,"payload":[{"scoreId":1,"score":"94","courseId":1,"userId":3},{"scoreId":2,"score":"92","courseId":4,"userId":4}],"time":"2025-06-25T10:40:01.5551348"}
+[2025-06-25 10:40:38] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 15524 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 10:40:38] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 10:40:57] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 19.177 seconds (process running for 20.106)
+[2025-06-25 10:41:35] - INFO - com.example.studentmanagement.controller.ScoreController - Received request: GET /api/v1/score
+[2025-06-25 10:41:35] - INFO - com.example.studentmanagement.controller.ScoreController - Response: [ScoreResponse(scoreId=1, score=94, courseId=1, userId=3), ScoreResponse(scoreId=2, score=92, courseId=4, userId=4)]
+[2025-06-25 10:41:36] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/score 
+[2025-06-25 10:41:36] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get all scores successfully","status":"OK","statusCode":200,"payload":[{"scoreId":1,"score":"94","courseId":1,"userId":3},{"scoreId":2,"score":"92","courseId":4,"userId":4}],"time":"2025-06-25T10:41:35.9864588"}
+[2025-06-25 10:42:04] - INFO - com.example.studentmanagement.controller.ScoreController - Request: GET /api/v1/score/1
+[2025-06-25 10:42:04] - INFO - com.example.studentmanagement.controller.ScoreController - Response: ScoreResponse(scoreId=1, score=94, courseId=1, userId=3)
+[2025-06-25 10:42:04] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/score/1 
+[2025-06-25 10:42:04] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get score by id successfully","status":"OK","statusCode":200,"payload":{"scoreId":1,"score":"94","courseId":1,"userId":3},"time":"2025-06-25T10:42:04.325459"}
+[2025-06-25 10:42:23] - INFO - com.example.studentmanagement.controller.ScoreController - Request: GET /api/v1/score/90
+[2025-06-25 10:44:33] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/40
+[2025-06-25 11:03:02] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/course 
+[2025-06-25 11:03:02] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get all courses successfully","status":"OK","statusCode":200,"payload":[{"courseId":1,"courseName":"Java","description":"stringdcsgfbg dcfgb"},{"courseId":2,"courseName":"C#","description":"stringdcsgfbg dcfgb"},{"courseId":18,"courseName":"android","description":"dfgf"},{"courseId":21,"courseName":"abc","description":"dfgd"},{"courseId":22,"courseName":"cbbb","description":"bgvfcds"},{"courseId":24,"courseName":"eee","description":"sdvf"},{"courseId":3,"courseName":"string","description":"string"}],"time":"2025-06-25T11:03:02.236307"}
+[2025-06-25 11:03:19] - INFO - com.example.studentmanagement.controller.ScoreController - Received request: GET /api/v1/score
+[2025-06-25 11:03:20] - INFO - com.example.studentmanagement.controller.ScoreController - Response: [ScoreResponse(scoreId=1, score=94, courseId=1, userId=3), ScoreResponse(scoreId=2, score=92, courseId=4, userId=4)]
+[2025-06-25 11:03:20] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/score 
+[2025-06-25 11:03:20] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get all scores successfully","status":"OK","statusCode":200,"payload":[{"scoreId":1,"score":"94","courseId":1,"userId":3},{"scoreId":2,"score":"92","courseId":4,"userId":4}],"time":"2025-06-25T11:03:20.0718845"}
+[2025-06-25 11:04:22] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 1996 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 11:04:22] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 11:04:33] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 11.583 seconds (process running for 12.697)
+[2025-06-25 11:06:05] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: POST /api/v1/course {"courseName":"Ruby","description":"gbvfc"}
+[2025-06-25 11:06:05] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is created successfully","status":"CREATED","statusCode":201,"payload":{"courseId":25,"courseName":"Ruby","description":"gbvfc"},"time":"2025-06-25T11:06:05.3104287"}
+[2025-06-25 11:06:43] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/50
+[2025-06-25 11:07:03] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/score 
+[2025-06-25 11:07:03] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get all scores successfully","status":"OK","statusCode":200,"payload":[{"scoreId":1,"score":"94","courseId":1,"userId":3},{"scoreId":2,"score":"92","courseId":4,"userId":4}],"time":"2025-06-25T11:07:03.7488041"}
+[2025-06-25 11:07:22] - INFO - com.example.studentmanagement.controller.ScoreController - Request: GET /api/v1/score/1
+[2025-06-25 11:07:22] - INFO - com.example.studentmanagement.controller.ScoreController - Response: ScoreResponse(scoreId=1, score=94, courseId=1, userId=3)
+[2025-06-25 11:07:22] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/score/1 
+[2025-06-25 11:07:22] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get score by id successfully","status":"OK","statusCode":200,"payload":{"scoreId":1,"score":"94","courseId":1,"userId":3},"time":"2025-06-25T11:07:22.913483"}
+[2025-06-25 11:08:46] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 180 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 11:08:46] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 11:08:57] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 10.927 seconds (process running for 11.951)
+[2025-06-25 11:09:02] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: GET /api/v1/score/1 
+[2025-06-25 11:09:02] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Get score by id successfully","status":"OK","statusCode":200,"payload":{"scoreId":1,"score":"94","courseId":1,"userId":3},"time":"2025-06-25T11:09:02.8347161"}
+[2025-06-25 11:09:53] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/21
+[2025-06-25 11:09:53] - INFO - com.example.studentmanagement.controller.CourseController - Response: ApiResponse(message=Course is deleted successfully, status=200 OK, statusCode=200, payload=null, time=2025-06-25T11:09:53.748684)
+[2025-06-25 11:09:53] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: DELETE /api/v1/course/21 
+[2025-06-25 11:09:53] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is deleted successfully","status":"OK","statusCode":200,"time":"2025-06-25T11:09:53.748684"}
+[2025-06-25 11:09:57] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/22
+[2025-06-25 11:09:57] - INFO - com.example.studentmanagement.controller.CourseController - Response: ApiResponse(message=Course is deleted successfully, status=200 OK, statusCode=200, payload=null, time=2025-06-25T11:09:57.909918700)
+[2025-06-25 11:09:57] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: DELETE /api/v1/course/22 
+[2025-06-25 11:09:57] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is deleted successfully","status":"OK","statusCode":200,"time":"2025-06-25T11:09:57.9099187"}
+[2025-06-25 11:10:00] - INFO - com.example.studentmanagement.controller.CourseController - Request: DELETE /api/v1/course/24
+[2025-06-25 11:10:00] - INFO - com.example.studentmanagement.controller.CourseController - Response: ApiResponse(message=Course is deleted successfully, status=200 OK, statusCode=200, payload=null, time=2025-06-25T11:10:00.269138200)
+[2025-06-25 11:10:00] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Request: DELETE /api/v1/course/24 
+[2025-06-25 11:10:00] - INFO - com.example.studentmanagement.configuration.RequestResponseLoggingFilter - Response: {"message":"Course is deleted successfully","status":"OK","statusCode":200,"time":"2025-06-25T11:10:00.2691382"}
+[2025-06-25 11:11:41] - INFO - com.example.studentmanagement.StudentManagementApplication - Starting StudentManagementApplication using Java 21 with PID 19856 (D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement\build\classes\java\main started by User in D:\HRD\Spring Boot\work\student-management-clone-db\studentManagement)
+[2025-06-25 11:11:41] - INFO - com.example.studentmanagement.StudentManagementApplication - No active profile set, falling back to 1 default profile: "default"
+[2025-06-25 11:11:52] - INFO - com.example.studentmanagement.StudentManagementApplication - Started StudentManagementApplication in 11.304 seconds (process running for 12.316)

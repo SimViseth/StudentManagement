@@ -9,6 +9,8 @@ import java.io.IOException;
 
 @Component
 public class JwtAuthEntryPoint implements AuthenticationEntryPoint {
+
+    // handling unauthorized access attempts to protected resources (for who not authenticate yet)
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, org.springframework.security.core.AuthenticationException authException) throws IOException {
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");

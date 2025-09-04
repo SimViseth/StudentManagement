@@ -49,8 +49,6 @@ public class CourseController {
     @Operation(summary = "Update courses")
     public ResponseEntity<ApiResponse<CourseResponse>> updateCourse(@Valid @PathVariable Integer courseId, @RequestBody CourseRequest courseRequest, HttpServletRequest request) {
 
-        log.info("Request: {} {}" , request.getMethod(), request.getRequestURI());
-
         CourseResponse payloadResponse = courseService.updateCourse(courseId, courseRequest);
 
         ApiResponse<CourseResponse> response = ApiResponse.<CourseResponse>builder()
@@ -61,16 +59,12 @@ public class CourseController {
                 .time(LocalDateTime.now())
                 .build();
 
-        log.info("Response: {}", payloadResponse);
-
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @DeleteMapping("/{courseId}")
     @Operation(summary = "Delete courses")
     public ResponseEntity<ApiResponse<String>> deleteCourse(@PathVariable Integer courseId, HttpServletRequest request) {
-
-        log.info("Request: {} {}" , request.getMethod(), request.getRequestURI());
 
         courseService.deleteCourse(courseId);
         ApiResponse<String> response = ApiResponse.<String>builder()
@@ -80,14 +74,10 @@ public class CourseController {
                 .time(LocalDateTime.now())
                 .build();
 
-        log.info("Response: {}", response);
-
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
     @GetMapping
     public ResponseEntity<ApiResponse<List<CourseResponse>>> getAllCourses(HttpServletRequest request) {
-
-        log.info("Request: {} {}" , request.getMethod(), request.getRequestURI());
 
         List<CourseResponse> payloadResponse = courseService.getAllCourses();
 
@@ -99,16 +89,12 @@ public class CourseController {
                 .time(LocalDateTime.now())
                 .build();
 
-        log.info("Response: {}", payloadResponse);
-
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
 
     @GetMapping("/{courseId}")
     public ResponseEntity<ApiResponse<CourseResponse>> getCourseById(@Valid @PathVariable Integer courseId, HttpServletRequest request) {
-
-        log.info("Request: {} {}", request.getMethod(), request.getRequestURI());
 
         CourseResponse payloadResponse = courseService.getCourseById(courseId);
 
@@ -119,8 +105,6 @@ public class CourseController {
                 .message("Get course by id successfully")
                 .time(LocalDateTime.now())
                 .build();
-
-        log.info("Response: {}", payloadResponse);
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }

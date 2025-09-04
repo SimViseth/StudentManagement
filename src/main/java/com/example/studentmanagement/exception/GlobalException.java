@@ -33,7 +33,7 @@ public class GlobalException {
                 .status(status.value())
                 .detail(detail)
                 .instance(request.getRequestURI())
-                .errors(errors != null ? errors : new HashMap<>())
+                .errors(errors)
                 .build();
 
         log.error("Error Response: {}", errorResponse);
@@ -42,47 +42,70 @@ public class GlobalException {
     }
 
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleNotFoundException(NotFoundException ex, HttpServletRequest request) {
-        return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), request, null);
+    public ProblemDetail handleNotFoundException(NotFoundException exception) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, exception.getMessage());
     }
 
     @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity<ErrorResponse> handleBadRequestException(BadRequestException ex, HttpServletRequest request) {
-        return buildErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage(), request, null);
+    public ResponseEntity<?> handleBadRequestException(BadRequestException exception) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problemDetail);
     }
 
     @ExceptionHandler(ForbiddenException.class)
-    public ResponseEntity<ErrorResponse> handleForbiddenException(ForbiddenException ex, HttpServletRequest request) {
-        return buildErrorResponse(HttpStatus.FORBIDDEN, ex.getMessage(), request, null);
+    public ResponseEntity<?> handleForbiddenException(ForbiddenException exception) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.FORBIDDEN, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(problemDetail);
     }
 
     @ExceptionHandler(ConflictException.class)
-    public ResponseEntity<ErrorResponse> handleConflictException(ConflictException ex, HttpServletRequest request) {
-        return buildErrorResponse(HttpStatus.CONFLICT, ex.getMessage(), request, null);
+    public ResponseEntity<?> handleConflictException(ConflictException exception) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(problemDetail);
     }
 
+    // handle when request body and extract field error - @Valid
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex, HttpServletRequest request) {
+    public ResponseEntity<?> methodArgumentNotValidException(MethodArgumentNotValidException exception) {
         Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getFieldErrors().forEach(fieldError ->
+
+        // errors can happen on multiple fields at once, so loop it
+        exception.getBindingResult().getFieldErrors().forEach(fieldError ->
                 errors.put(fieldError.getField(), fieldError.getDefaultMessage())
         );
-        return buildErrorResponse(HttpStatus.BAD_REQUEST, "Validate Invalid", request, errors);
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Validate Invalid");
+        problemDetail.setProperty("errors", errors);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problemDetail);
     }
 
+    // handle when request parameter - @RequestParam, @PathVariable
     @ExceptionHandler(HandlerMethodValidationException.class)
-    public ResponseEntity<ErrorResponse> handleMethodValidationException(HandlerMethodValidationException ex, HttpServletRequest request) {
+    public ResponseEntity<?> handleMethodValidationException(HandlerMethodValidationException exception) {
         Map<String, String> errors = new HashMap<>();
-        ex.getAllValidationResults().forEach(parameterError ->
+
+        exception.getAllValidationResults().forEach(parameterError ->
                 parameterError.getResolvableErrors().forEach(error ->
-                        errors.put(parameterError.getMethodParameter().getParameterName(), error.getDefaultMessage())
+                        errors.put(parameterError.getMethodParameter().getParameterName(),
+                                error.getDefaultMessage()
+                        )
                 )
         );
-        return buildErrorResponse(HttpStatus.BAD_REQUEST, "Validation failed.", request, errors);
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Validation failed.");
+        problemDetail.setProperty("errors", errors);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problemDetail);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleAllUnhandledExceptions(Exception ex, HttpServletRequest request) {
         return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong.", request, null);
     }
+
+    /* .getAllValidationResults(): Return list of parameters that failed validation. (2 or more param)
+            Ex: email has a result: "must be a valid email"
+                name has two result: "name must not be blank" and "name contain letter only"
+                so we get two "result" objects: one for name, one for email
+
+        .getResolvableErrors(): Return list of error messages for one parameter - specific to each param not all
+            Ex: specific on name's result, so we get two messages "name must not be blank" and "name contain letter only"
+    */
 }

@@ -15,31 +15,33 @@ import java.util.Map;
 import java.util.function.Function;
 @Component
 public class JwtService {
-    private final static long JWT_TOKEN_TIME = 60 * 60 * 1000;
+    private final static long JWT_TOKEN_TIME = 5 * 60 * 60; // 5h
     private final static String SECRET = "5465464bcd3967c1859c1c9eeb365dc8ebd62e782dbfa7e094b6e40404dcdb8b15f4bcd3967c1859c1c9eeb365dc8ebd62e782dbfa7e094b6e40404dcdb8b15f";
 
+    // define for other method call to use and pass it back to this method
     private String createToken(Map<String, Object> claim, String subject){
         return Jwts.builder()
-                .setClaims(claim)
-                .setSubject(subject)
+                .setClaims(claim) // empty claim
+                .setSubject(subject) // can be id, username or email
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_TIME * 1000))
-                .signWith(getSignKey() , SignatureAlgorithm.HS256).compact();
+                .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_TIME * 1000)) // 1s = 1000 mili second
+                .signWith(getSignKey() , SignatureAlgorithm.HS256).compact(); // check getSignKey() equal SignatureAlgorithm.HS256 or not
     }
 
     public Key getSignKey(){
         byte[] keyBytes = Base64.getDecoder().decode(SECRET);
-        return Keys.hmacShaKeyFor(keyBytes);
+        return Keys.hmacShaKeyFor(keyBytes); // hash for signature
     }
 
-    //2. generate token for user
+    // generate token for user
     public String generateToken(User appUser){
         Map<String, Object> claims = new HashMap<>();
-        claims.put("userId", appUser.getUserId());
-        return createToken(claims, appUser.getEmail());
+        // store the userId in the token’s payload
+        claims.put("userId", appUser.getUserId()); // custom claim
+        return createToken(claims, appUser.getEmail()); // subject - standard
     }
 
-    //3. retrieving any information from token we will need the secret key
+    // retrieving any information from token we will need the secret key
     private Claims extractAllClaim(String token){
         return Jwts.parserBuilder()
                 .setSigningKey(getSignKey())
@@ -48,28 +50,28 @@ public class JwtService {
                 .getBody();
     }
 
-    //4. extract a specific claim from the JWT token's claims
+    // extract a specific claim from the JWT token's claims ex below: username,
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver){
         final Claims claims = extractAllClaim(token);
         return claimsResolver.apply(claims);
     }
 
-    //5. retrieve username from JWT token
+    // retrieve username from JWT token
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
-    //6. retrieve expiration date from JWT token
+    // retrieve expiration date from JWT token
     public Date extractExpirationDate(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
 
-    //7. check expired token
+    // check expired token
     private Boolean isTokenExpired(String token) {
         return extractExpirationDate(token).before(new Date());
     }
 
-    //8. validate token
+    // validate token: check the user from token and user detail are the same or not
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = extractUsername(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));

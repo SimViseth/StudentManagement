@@ -33,13 +33,11 @@ public class OracleConfig {
         return new DataSourceProperties();
     }
 
-
     // Bind to our custom: url, username, password, driverClass
     @Bean
     public DataSource oracleDatasource() {
         return oracleDatasourceProperties().initializeDataSourceBuilder().build();
     }
-
 
     // Manage entity
     // @Qualifier: help spring to choose which one to inject when have multiple beans of the same type
@@ -53,7 +51,7 @@ public class OracleConfig {
 
         return entityManagerFactoryBuilder
                 .dataSource(dataSource)
-                .packages("com.example.studentmanagement.model.entity.oracle")  // Scans package for JPA entity classes
+                .packages("com.example.studentmanagement.model.entity.oracle")  // Scans package for jpa entity classes
                 .properties(jpaProperties)
                 .build();
     }

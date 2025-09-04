@@ -17,6 +17,15 @@
         <encoder>
             <pattern>[%d{yyyy-MM-dd HH:mm:ss}] - %level - %logger - %msg%n</pattern>
         </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>NEUTRAL</onMismatch>
+        </filter>
     </appender>
 
     <!-- Appender for exceptions -->
@@ -34,6 +43,11 @@
         <encoder>
             <pattern>[%d{yyyy-MM-dd HH:mm:ss}] - %level - %logger - %msg%n%ex</pattern>
         </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
     </appender>
 
     <!-- Console output -->
@@ -43,18 +57,8 @@
         </encoder>
     </appender>
 
-    <!-- Request Logger -->
-    <logger name="REQUEST_LOGGER" level="INFO" additivity="false">
+    <logger name="com.example.studentmanagement" level="INFO" additivity="false">
         <appender-ref ref="APP_FILE"/>
-    </logger>
-
-    <!-- Response Logger -->
-    <logger name="RESPONSE_LOGGER" level="INFO" additivity="false">
-        <appender-ref ref="APP_FILE"/>
-    </logger>
-
-    <!-- Exception Logger -->
-    <logger name="EXCEPTION_LOGGER" level="ERROR" additivity="false">
         <appender-ref ref="EXCEPTION_FILE"/>
     </logger>
 

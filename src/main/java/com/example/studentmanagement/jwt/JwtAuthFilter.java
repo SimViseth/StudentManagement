@@ -27,14 +27,22 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String token = null;
         String email = null;
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            // 7 refer to a word Bearer and one space
+            // Ex: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9... so it means removes that prefix (Bearer ) and returns only the JWT token.
             token = authHeader.substring(7);
             email = jwtService.extractUsername(token);
         }
+
+        // check if valid email and not yet authenticated
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            // get user info by email
             UserDetails userDetails = userService.loadUserByUsername(email);
+
+            // check valid token and belong to that user
             if (jwtService.validateToken(token, userDetails)) {
+                                                                                                                // user info , no need password cuz authenticated via token, role
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request)); // extra: ip address, sessionId...
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
         }
